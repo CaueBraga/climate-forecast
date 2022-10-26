@@ -1,9 +1,19 @@
 import SearchIcon from "@mui/icons-material/Search";
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Card } from "./components/Card";
 
 function App() {
   const [showCard, setShowCard] = useState<boolean>(false);
+  const key = "3bd3dfaaaf5d4642a54234042222510";
+
+  useEffect(() => {
+    axios(
+      `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=London&days=5&aqi=no&alerts=no`
+    ).then((response) => {
+      console.log(response.data);
+    });
+  }, []);
 
   return (
     <div className="flex justify-center items-start w-screen h-screen bg-gradient-to-t from-yellow-400 to-orange-500">
