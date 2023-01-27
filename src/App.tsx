@@ -6,13 +6,17 @@ import { Card } from "./components/Card";
 function App() {
   const [showCard, setShowCard] = useState<boolean>(false);
   const key = "3bd3dfaaaf5d4642a54234042222510";
+  const [weatherData, setWeatherData] = useState({});
 
   useEffect(() => {
-    axios(
-      `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=London&days=5&aqi=no&alerts=no`
-    ).then((response) => {
-      console.log(response.data);
-    });
+    const callApi = async () => {
+      const response = await axios(
+        `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=London&days=5&aqi=no&alerts=no`
+      );
+      setWeatherData(response.data);
+    };
+    callApi();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -21,7 +25,7 @@ function App() {
         <h1 className="sm:mt-40 text-white text-5xl sm:text-6xl">
           Weather Forecast
         </h1>
-        {showCard /*  === true  */ && <Card />}
+        {weatherData /*  === true  */ && <Card weatherData={weatherData} />}
         <div className="bg-white mt-10">
           <form
             onSubmit={(e) => {

@@ -2,11 +2,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
-export function Card() {
+export function Card({ weatherData }: any) {
   return (
     <div className="flex flex-col gap-4 pl-12 py-4 sm:mt-10 h-72 w-full bg-white">
       <div className="flex justify-between">
-        <div>Niteroi, RJ - Brasil</div>
+        <div>{weatherData.location.name}, RJ - Brasil</div>
         <CloseIcon className="mr-2" />
       </div>
       <div className="font-bold text-4xl">20°C Nublado</div>
