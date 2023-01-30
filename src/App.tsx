@@ -8,6 +8,8 @@ import { Card } from "./components/Card";
 //read.me
 //perguntar que porra eh essa branca do lado do input
 //
+//
+//
 
 function App() {
   const [showCard, setShowCard] = useState<boolean>(false);
