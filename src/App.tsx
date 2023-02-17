@@ -14,7 +14,7 @@ import { Card } from "./components/Card";
 
 function App() {
   const [showCard, setShowCard] = useState<boolean>(false);
-  const key = "b6d657ed2f6b48619fd233445232801";
+  const key = "6b0cafde39de4edf9d4205652231602 ";
   const [weatherData, setWeatherData] = useState();
   const [inputValue, setInputValue] = useState("");
 
