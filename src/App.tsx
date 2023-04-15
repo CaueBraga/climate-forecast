@@ -3,15 +3,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Card } from "./components/Card";
 
-//perguntar como fazer o loading
-//responsivo
-//read.me
-//perguntar que porra eh essa branca do lado do input
-//
-//
-//
-////
-
 function App() {
   const [showCard, setShowCard] = useState<boolean>(false);
   const key = "6b0cafde39de4edf9d4205652231602 ";
@@ -24,7 +15,7 @@ function App() {
 
   const callApi = async () => {
     const response = await axios(
-      `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${inputValue}&days=6&aqi=no&alerts=no`
+      `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${inputValue}&days=6&aqi=no&alerts=no`
     );
     setWeatherData(response.data);
     setShowCard(true);
