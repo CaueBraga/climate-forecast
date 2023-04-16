@@ -31,15 +31,15 @@ function App() {
   return (
     <div className="flex justify-center items-start w-screen h-screen bg-gradient-to-t from-yellow-400 to-orange-500">
       <div className="flex flex-col w-full sm:w-auto">
-        <h1 className="sm:mt-40  text-yellow-100 text-5xl sm:text-6xl mx-auto">
+        <h1 className="sm:mt-40   text-slate-100 text-5xl sm:text-6xl mx-auto">
           Weather Forecast
         </h1>
         {showCard && <Card wD={weatherData} />}
-        <div className="bg-yellow-200 mt-10 rounded">
+        <div className="bg-slate-100 mt-10 rounded">
           <form onSubmit={handleSubmit}>
             <input
-              className="text-xl bg-yellow-200  px-4 rounded py-3 w-11/12 "
-              placeholder="Insira aqui o nome da cidade"
+              className="text-xl bg-slate-100  px-4 rounded py-3 w-11/12 "
+              placeholder="Enter city name here"
               value={inputValue}
               onChange={handleInputChange}
             ></input>
